@@ -3,7 +3,7 @@ The player must try and hit the target set on the play-area each time .
 
 **Prerequisites:**
 
-Player must have Pygame,Turtle installed on system.
+Player must have Python libraries Pygame and Turtle installed on system.
 
 **Steps for installation:**
 1. _pip3 install pygame_
