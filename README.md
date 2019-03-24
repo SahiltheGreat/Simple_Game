@@ -1,19 +1,19 @@
-Prerequisites:
+**Prerequisites:**
 
 Player must have Pygame,Turtle installed on system.
 
-Steps for installation:
-1. pip3 install pygame
-2. pip3 install turtle
+**Steps for installation:**
+1. _pip3 install pygame_
+2. _pip3 install turtle_
 
-Instructions:
+**Instructions:**
 
-Left key --> Move left
+Left key --> _Move left_
 
-Right key --> Move right
+Right key --> _Move right_
 
-Up key  --> Increase speed
+Up key  --> _Increase speed_
 
-Down key --> Decrease speed
+Down key --> _Decrease speed_
 
 Have a happy time playing !!!
