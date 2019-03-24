@@ -32,7 +32,7 @@ borderpen.hideturtle()
 borderpen.penup()
 borderpen.color("green")
 borderpen.setposition(-340,350)
-trademarkstring = "MADE BY SAHIL BHATT. TRADEMARK OF SMBCORP"
+trademarkstring = "MADE BY SAHIL BHATT. TRADEMARK OF SAHILCORP"
 borderpen.write(trademarkstring,False, align="center", font =("Arial",20,"normal"))
 
 #INITIALISING THE PLAYER
