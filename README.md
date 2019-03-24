@@ -1,3 +1,6 @@
+**Objective:**
+The player must try and hit the target set on the play-area each time .
+
 **Prerequisites:**
 
 Player must have Pygame,Turtle installed on system.
