@@ -1,5 +1,5 @@
 **Objective:**
-The player must try and hit the target set on the play-area each time .
+The player must try and hit the target set on the play-area each time until countdown timer reaches zero.
 
 **Prerequisites:**
 
@@ -19,4 +19,4 @@ Up key  --> _Increase speed_
 
 Down key --> _Decrease speed_
 
-Have a happy time playing !!!
+Good Luck ! Have a happy time playing !!!
