@@ -28,6 +28,13 @@ for side in range(4):
 borderpen.hideturtle()
 
 
+#TRADEMARK
+borderpen.penup()
+borderpen.color("green")
+borderpen.setposition(-340,350)
+trademarkstring = "MADE BY SAHIL BHATT. TRADEMARK OF SMBCORP"
+borderpen.write(trademarkstring,False, align="center", font =("Arial",20,"normal"))
+
 #INITIALISING THE PLAYER
 player = turtle.Turtle()
 player.color("green")
