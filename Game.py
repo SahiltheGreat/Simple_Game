@@ -68,6 +68,10 @@ def isCollision(p1,p2):
     else:
         return False
 
+#FOR SCORE
+score =0
+
+
 #FOR USER INPUT
 turtle.listen()
 turtle.onkey(turnleft,"Left")
@@ -90,6 +94,15 @@ while True:
     if isCollision(player,goal):
         pygame.mixer.music.play()
         time.sleep(0)
+        score +=1
+        borderpen.undo()
+        borderpen.penup()
+        borderpen.color("yellow")
+        borderpen.hideturtle()
+        borderpen.setposition(-290,310)
+        scorestring = "SCORE : %s" %score
+        borderpen.write(scorestring,False, align="left", font =("Arial",14,"normal"))
+        #print(score)
         goal.setposition(random.randint(-300,300),random.randint(-300,300))
 
 
