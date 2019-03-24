@@ -4,9 +4,11 @@ import random
 import pygame
 import time
 
-#FOR  GENERATING SOUND ON HITTING TARGET
+#FOR  GENERATING SOUND ON HITTING TARGET AND GAME-OVER
 pygame.init()
-pygame.mixer.music.load("point.wav")
+s1=pygame.mixer.Sound("point.wav")
+s2=pygame.mixer.Sound("gameover.wav")
+
 
 #INITIALISING PLAYAREA
 playarea= turtle.Screen()
@@ -45,6 +47,16 @@ goal.setposition(random.randint(-300,300),random.randint(-300,300))
 #SETTING PLAYER SPEED
 speed = 1
 
+#FOR SCORE
+score =0
+
+borderpen.penup()
+borderpen.color("yellow")
+borderpen.hideturtle()
+borderpen.setposition(-290,310)
+scorestring = "SCORE : %s" %score
+borderpen.write(scorestring,False, align="left", font =("Arial",14,"normal"))
+
 
 #DEFINING PLAYER FUNCTIONS
 def turnleft():
@@ -68,8 +80,42 @@ def isCollision(p1,p2):
     else:
         return False
 
-#FOR SCORE
-score =0
+
+#FOR TIMER
+class Timer(turtle.Turtle):
+    def __init__(self,x,y,c,sec):
+        turtle.Turtle.__init__(self)
+        self.sec = sec
+        self.pensize = 14
+        #self.action = action
+        self.ht()
+        self.color(c)
+        self.penup()
+        self.goto(x,y)
+        self.write(time.strftime("%H:%M:%S",time.gmtime(self.sec)),False,align="center",font=("Arial",self.pensize,"bold"))
+    
+    def start(self):
+        self.clear()
+        self.write(time.strftime("%H:%M:%S",time.gmtime(self.sec)),False,align="center",font=("Arial",self.pensize,"bold"))
+        self.sec -=1
+        if self.sec !=-1:
+            playarea.ontimer(self.start,1000)
+        else:
+            #borderpen.penup()
+            borderpen.color("red")
+            borderpen.hideturtle()
+            borderpen.setposition(0,-350)
+            s2.play()
+            time.sleep(0)
+            finalstring = "GAME OVER ! YOUR FINAL SCORE  IS : %s" %score
+            borderpen.write(finalstring,False, align="center", font =("Arial",30,"normal"))
+            time.sleep(6)
+            turtle.bye()
+
+
+timer = Timer(0,310,"red",30)
+timer.start()
+
 
 
 #FOR USER INPUT
@@ -92,8 +138,9 @@ while True:
 
     #CHECKING PLAYER-TARGET COLLISION
     if isCollision(player,goal):
-        pygame.mixer.music.play()
+        s1.play()
         time.sleep(0)
+        #FOR SCORE COUNTING AND PRINTING
         score +=1
         borderpen.undo()
         borderpen.penup()
