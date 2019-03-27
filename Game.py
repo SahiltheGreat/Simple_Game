@@ -8,7 +8,7 @@ import time
 pygame.init()
 s1=pygame.mixer.Sound("point.wav")
 s2=pygame.mixer.Sound("gameover.wav")
-s3=pygame.mixer.Sound("bump.wav")
+#s3=pygame.mixer.Sound("bump.wav")
 
 #INITIALISING PLAYAREA
 playarea= turtle.Screen()
@@ -139,13 +139,13 @@ while True:
     #CHECKING BORDER COLLISION
     if player.xcor()>300 or player.xcor()<-300:
         player.right(180)
-        s3.play()
-        time.sleep(0)
+        #s3.play()
+        #time.sleep(0)
     
     if player.ycor()>300 or player.ycor()<-300:
         player.right(180)
-        s3.play()
-        time.sleep(0)
+        #s3.play()
+        #time.sleep(0)
 
     #CHECKING PLAYER-TARGET COLLISION
     if isCollision(player,goal):
