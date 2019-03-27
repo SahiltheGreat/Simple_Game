@@ -19,4 +19,9 @@ Up key  --> _Increase speed_
 
 Down key --> _Decrease speed_
 
+The default game lasts two minutes. You can play for as long as you like if you know just a little bit of python and can modify the code. :)
+
+Kindly do raise issues or suggestions ( if you find or think of any ).
+
 Good Luck ! Have a happy time playing !!!
+
